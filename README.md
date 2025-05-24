@@ -4,32 +4,32 @@
 [![GitHub Workflows](https://github.com/PlayPro/CoreProtect/actions/workflows/build.yml/badge.svg)](https://github.com/PlayPro/CoreProtect/actions)
 [![Netlify Status](https://img.shields.io/netlify/c1d26a0f-65c5-4e4b-95d7-e08af671ab67)](https://app.netlify.com/sites/coreprotect/deploys)
 [![CodeFactor](https://www.codefactor.io/repository/github/playpro/coreprotect/badge)](https://www.codefactor.io/repository/github/playpro/coreprotect)
-[![Join us on Discord](https://img.shields.io/discord/348680641560313868.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/b4DZ4jy)
+[![加入 Discord 社区](https://img.shields.io/discord/348680641560313868.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/b4DZ4jy)
 
 CoreProtect
 ===========
 
-CoreProtect is a blazing fast data logging and anti-griefing tool for Minecraft servers.
+CoreProtect 是一款极快的数据记录与反破坏工具，适用于 Minecraft 服务器。
 
-For a detailed description of the plugin, please visit [coreprotect.net](https://coreprotect.net).
+如需插件详细介绍，请访问 [coreprotect.net](https://coreprotect.net)。
 
-| Quick Links |  |
+| 快速链接 |  |
 | --- | --- |
-| CoreProtect Discord: | [discord.gg/b4DZ4jy](https://discord.gg/b4DZ4jy) |
-| CoreProtect Patreon: | [patreon.com/coreprotect](https://www.patreon.com/coreprotect) |
-| CoreProtect Documentation: | [docs.coreprotect.net](https://docs.coreprotect.net) |
-| Downloads for MC 1.14 - 1.20: | [coreprotect.net/latest](https://coreprotect.net/latest/) |
-| Downloads for MC 1.8 - 1.12: | [coreprotect.net/legacy](https://coreprotect.net/legacy/) |
+| CoreProtect Discord： | [discord.gg/b4DZ4jy](https://discord.gg/b4DZ4jy) |
+| CoreProtect Patreon： | [patreon.com/coreprotect](https://www.patreon.com/coreprotect) |
+| CoreProtect 文档： | [docs.coreprotect.net](https://docs.coreprotect.net) |
+| MC 1.14 - 1.20 下载： | [coreprotect.net/latest](https://coreprotect.net/latest/) |
+| MC 1.8 - 1.12 下载： | [coreprotect.net/legacy](https://coreprotect.net/legacy/) |
 
 bStats
 ------
-[![bStats Graph Data](https://bstats.org/signatures/bukkit/CoreProtect.svg)](https://bstats.org/plugin/bukkit/CoreProtect)
+[![bStats 图表数据](https://bstats.org/signatures/bukkit/CoreProtect.svg)](https://bstats.org/plugin/bukkit/CoreProtect)
 
 API
 ------
-### [API Documentation](https://docs.coreprotect.net/api/)
+### [API 文档](https://docs.coreprotect.net/api/)
 
-### Dependency Information
+### 依赖信息
 Maven
 ```xml
 <repository>
@@ -41,15 +41,15 @@ Maven
 <dependency>
     <groupId>net.coreprotect</groupId>
     <artifactId>coreprotect</artifactId>
-    <version>22.4</version>
+    <version>23.2</version>
     <scope>provided</scope>
 </dependency>
 ```
 
-Contributing
+贡献
 ------
-CoreProtect is an open source project, and gladly accepts community contributions.
+CoreProtect 是一个开源项目，欢迎社区贡献。
 
-If you'd like to contribute, please read our contributing guidelines here: [CONTRIBUTING.md](CONTRIBUTING.md)
+如果你希望参与贡献，请阅读我们的贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](CONTRIBUTING.md#code-of-conduct) 
+[![贡献者公约](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](CONTRIBUTING.md#code-of-conduct)
