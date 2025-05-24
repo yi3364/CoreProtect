@@ -1,28 +1,28 @@
-# Welcome to the CoreProtect Documentation
+# 欢迎使用 CoreProtect 文档
 
-For more information about CoreProtect, visit [coreprotect.net](http://coreprotect.net).
+如需获取更多关于 CoreProtect 的信息，请访问 [coreprotect.net](http://coreprotect.net)。
 
-## Getting Started
+## 入门指南
 
-Please visit one of the following links for more information.
+请访问以下链接获取详细信息。
 
-[**CoreProtect Commands**](/commands/)  
-A list of all commands that can be used within CoreProtect.
+[**CoreProtect 指令列表**](/commands/)  
+查看 CoreProtect 支持的所有指令。
 
-[**CoreProtect Permissions**](/permissions/)  
-A list of all permissions that can be used with CoreProtect.  
+[**CoreProtect 权限列表**](/permissions/)  
+查看 CoreProtect 支持的所有权限节点。  
 
-[**CoreProtect Language Codes**](/languages/)  
-A list of all language codes that can be used with CoreProtect.  
+[**CoreProtect 语言代码**](/languages/)  
+查看 CoreProtect 支持的所有语言代码。  
 
-[**CoreProtect API Documentation**](/api/)  
-Log your own block changes, perform lookups, rollbacks, restores, and more.  
+[**CoreProtect API 文档**](/api/)  
+记录自定义方块变更、执行查询、回滚、还原等操作。  
 
-[**Compatible Third-Party Plugins & Tools**](/tools-integrations/)  
-A list of plugins and tools that are compatible with CoreProtect.  
+[**兼容的第三方插件与工具**](/tools-integrations/)  
+查看与 CoreProtect 兼容的插件和工具列表。  
 
-[**Per-World Configuration Files**](/config/#per-world-configuration)  
-Modify the logging settings for a specific world on your server.  
+[**单世界配置文件**](/config/#per-world-configuration)  
+为服务器的特定世界修改日志记录设置。  
 
-[**Disable Logging With a Blacklist**](/config/#disabling-logging)  
-Disable logging for specific users, blocks or commands.  
+[**使用黑名单禁用日志记录**](/config/#disabling-logging)  
+为特定用户、方块或指令禁用日志记录。

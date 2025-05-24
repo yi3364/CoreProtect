@@ -1,43 +1,43 @@
-# Networking API
+# 网络 API
 
-The CoreProtect Networking API allows clients to receive data using packets.
+CoreProtect 网络 API 允许客户端通过数据包接收数据。
 
-| Networking Details      |        |
-|-------------------------|--------|
-| **Networking Version:** | 1      |
-| **Plugin Version:**     | v21.3+ |
-
----
-
-## Packets
-
-The server will not respond unless the player has the correct permission, which is `coreprotect.networking`.
+| 网络相关信息         |        |
+|---------------------|--------|
+| **网络协议版本：**   | 1      |
+| **插件版本：**       | v21.3+ |
 
 ---
 
-## Server to Client
+## 数据包
 
-### Data Packet
-Sends data from the database.
+服务器仅在玩家拥有 `coreprotect.networking` 权限时才会响应。
 
-* Channel: `coreprotect:data`
+---
 
-| Type: `Int` | 1                      | 2                      | 3                  | 4                  |
+## 服务器 → 客户端
+
+### 数据包（Data Packet）
+从数据库发送数据。
+
+* 通道：`coreprotect:data`
+
+| 类型: `Int` | 1                      | 2                      | 3                  | 4                  |
 |-------------|------------------------|------------------------|--------------------|--------------------|
-|             | Time: `long`           | Time: `long`           | Time: `long`       | Time: `long`       |
-|             | Phrase selector: `UTF` | Phrase selector: `UTF` | Result User: `UTF` | Result User: `UTF` |
-|             | Result User: `UTF`     | Result User: `UTF`     | Message: `UTF`     | Target: `UTF`      |
-|             | Target: `UTF`          | Amount: `Int`          | Sign: `Boolean`    |                    |
-|             | Amount: `Int`          | X: `Int`               | X: `Int`           |                    |
+|             | 时间: `long`           | 时间: `long`           | 时间: `long`       | 时间: `long`       |
+|             | 短语选择器: `UTF`      | 短语选择器: `UTF`      | 结果用户: `UTF`    | 结果用户: `UTF`    |
+|             | 结果用户: `UTF`        | 结果用户: `UTF`        | 消息: `UTF`        | 目标: `UTF`        |
+|             | 目标: `UTF`            | 数量: `Int`            | 告示牌: `Boolean`  |                    |
+|             | 数量: `Int`            | X: `Int`               | X: `Int`           |                    |
 |             | X: `Int`               | Y: `Int`               | Y: `Int`           |                    |
 |             | Y: `Int`               | Z: `Int`               | Z: `Int`           |                    |
-|             | Z: `Int`               | World name: `UTF`      | World name: `UTF`  |                    |
-|             | World name: `UTF`      |                        |                    |                    |
-|             | Rolledback: `Boolean`  |                        |                    |                    |
-|             | isContainer: `Boolean` |                        |                    |                    |
-|             | Added: `Boolean`       |                        |                    |                    |
+|             | Z: `Int`               | 世界名: `UTF`          | 世界名: `UTF`      |                    |
+|             | 世界名: `UTF`          |                        |                    |                    |
+|             | 已回滚: `Boolean`      |                        |                    |                    |
+|             | 是否容器: `Boolean`    |                        |                    |                    |
+|             | 已添加: `Boolean`      |                        |                    |                    |
 
-Example (Fabric):
+示例（Fabric）：
 ```
 ByteArrayInputStream in = new ByteArrayInputStream(buf.getWrittenBytes());
 DataInputStream dis = new DataInputStream(in);
@@ -56,25 +56,25 @@ boolean isContainer = dis.readBoolean();
 boolean added = dis.readBoolean();
 ```
 
-### Handshake Packet
-Sends handshake if player is registered.
+### 握手包（Handshake Packet）
+如果玩家已注册，则发送握手包。
 
-* Channel: `coreprotect:handshake`
-* Registered: `Boolean`
+* 通道：`coreprotect:handshake`
+* 已注册: `Boolean`
 
 ---
 
-## Client to Server
+## 客户端 → 服务器
 
-### Handshake Packet
-Sends handshake to register
+### 握手包（Handshake Packet）
+发送握手以注册
 
-* Channel: `coreprotect:handshake`  
-* Mod Version: `UTF`  
+* 通道：`coreprotect:handshake`  
+* Mod 版本: `UTF`  
 * Mod Id: `UTF`   
-* CoreProtect Protocol: `Int`
+* CoreProtect 协议: `Int`
 
-Example (Fabric):
+示例（Fabric）：
 ```
 PacketByteBuf packetByteBuf = new PacketByteBuf(Unpooled.buffer());
 ByteArrayOutputStream msgBytes = new ByteArrayOutputStream();
@@ -87,13 +87,13 @@ packetByteBuf.writeBytes(msgBytes.toByteArray());
 
 ---
 
-## Debugging
+## 调试
 
 ### /co network-debug
-Allows you to debug the networking API if you are registered and have correct permissions.  
-To utilize the command, `network-debug: true` must be set in the CoreProtect `config.yml`.
+如果你已注册且拥有正确权限，可用于调试网络 API。  
+要使用此指令，需在 CoreProtect `config.yml` 中设置 `network-debug: true`。
 
-**Example**  
-`/co network-debug <type>`
+**示例**  
+`/co network-debug <类型>`
 
 ___

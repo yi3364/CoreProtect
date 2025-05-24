@@ -20,416 +20,415 @@ import org.bukkit.inventory.MerchantRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 /**
- * Interface for Bukkit API compatibility across different Minecraft versions.
- * Each method provides version-specific implementations to handle differences
- * between Minecraft/Bukkit API versions.
+ * Bukkit API 兼容接口，适配不同 Minecraft 版本。
+ * 每个方法都提供了针对不同 Minecraft/Bukkit API 版本的实现。
  */
 public interface BukkitInterface {
 
     // --------------------------------------------------------------------------
-    // Block-related methods
+    // 方块相关方法
     // --------------------------------------------------------------------------
 
     /**
-     * Checks if a block is attached to another block.
+     * 检查一个方块是否依附于另一个方块。
      * 
      * @param block
-     *            The base block
+     *            基础方块
      * @param scanBlock
-     *            The block to check for attachment
+     *            要检查依附关系的方块
      * @param blockData
-     *            The block data
+     *            方块数据
      * @param scanMin
-     *            The minimum scan value
-     * @return true if the block is attached, false otherwise
+     *            最小扫描值
+     * @return 如果依附则返回 true，否则返回 false
      */
     boolean isAttached(Block block, Block scanBlock, BlockData blockData, int scanMin);
 
     /**
-     * Gets the minimum height of a world.
+     * 获取世界的最小高度。
      * 
      * @param world
-     *            The world
-     * @return The minimum height
+     *            世界
+     * @return 最小高度
      */
     int getMinHeight(World world);
 
     /**
-     * Gets the legacy block ID for a material.
+     * 获取指定材质的旧版方块 ID。
      * 
      * @param material
-     *            The material
-     * @return The legacy block ID, or -1 if not applicable
+     *            材质
+     * @return 旧版方块 ID，不适用时返回 -1
      */
     int getLegacyBlockId(Material material);
 
     /**
-     * Gets the contents of a bucket material.
+     * 获取桶内的内容材质。
      * 
      * @param material
-     *            The bucket material
-     * @return The material inside the bucket, or AIR if not applicable
+     *            桶材质
+     * @return 桶内的材质，不适用时返回 AIR
      */
     Material getBucketContents(Material material);
 
     // --------------------------------------------------------------------------
-    // Material type checking methods
+    // 材质类型判断方法
     // --------------------------------------------------------------------------
 
     /**
-     * Checks if a material is an item frame.
+     * 判断材质是否为物品展示框。
      * 
      * @param material
-     *            The material to check
-     * @return true if the material is an item frame, false otherwise
+     *            要检查的材质
+     * @return 是物品展示框返回 true，否则返回 false
      */
     boolean isItemFrame(Material material);
 
     /**
-     * Checks if a material is invisible.
+     * 判断材质是否为隐形。
      * 
      * @param material
-     *            The material to check
-     * @return true if the material is invisible, false otherwise
+     *            要检查的材质
+     * @return 隐形返回 true，否则返回 false
      */
     boolean isInvisible(Material material);
 
     /**
-     * Checks if a material is a decorated pot.
+     * 判断材质是否为装饰陶罐。
      * 
      * @param material
-     *            The material to check
-     * @return true if the material is a decorated pot, false otherwise
+     *            要检查的材质
+     * @return 是装饰陶罐返回 true，否则返回 false
      */
     boolean isDecoratedPot(Material material);
 
     /**
-     * Checks if a material is a suspicious block.
+     * 判断材质是否为可疑方块。
      * 
      * @param material
-     *            The material to check
-     * @return true if the material is a suspicious block, false otherwise
+     *            要检查的材质
+     * @return 是可疑方块返回 true，否则返回 false
      */
     boolean isSuspiciousBlock(Material material);
 
     /**
-     * Checks if a material is a sign.
+     * 判断材质是否为告示牌。
      * 
      * @param material
-     *            The material to check
-     * @return true if the material is a sign, false otherwise
+     *            要检查的材质
+     * @return 是告示牌返回 true，否则返回 false
      */
     boolean isSign(Material material);
 
     /**
-     * Checks if a material is a chiseled bookshelf.
+     * 判断材质是否为雕纹书架。
      * 
      * @param material
-     *            The material to check
-     * @return true if the material is a chiseled bookshelf, false otherwise
+     *            要检查的材质
+     * @return 是雕纹书架返回 true，否则返回 false
      */
     boolean isChiseledBookshelf(Material material);
 
     /**
-     * Checks if a material is a bookshelf book.
+     * 判断材质是否为书架上的书。
      * 
      * @param material
-     *            The material to check
-     * @return true if the material is a bookshelf book, false otherwise
+     *            要检查的材质
+     * @return 是书架书返回 true，否则返回 false
      */
     boolean isBookshelfBook(Material material);
 
     /**
-     * Gets the seeds material for a plant material.
+     * 获取植物材质对应的种子材质。
      * 
      * @param material
-     *            The plant material
-     * @return The seeds material
+     *            植物材质
+     * @return 种子材质
      */
     Material getPlantSeeds(Material material);
 
     // --------------------------------------------------------------------------
-    // Item and inventory methods
+    // 物品与背包相关方法
     // --------------------------------------------------------------------------
 
     /**
-     * Adjusts an ingredient in a merchant recipe.
+     * 调整商人配方中的原材料。
      * 
      * @param recipe
-     *            The merchant recipe
+     *            商人配方
      * @param itemStack
-     *            The item stack
-     * @return The adjusted item stack, or null if not applicable
+     *            物品堆
+     * @return 调整后的物品堆，不适用时返回 null
      */
     ItemStack adjustIngredient(MerchantRecipe recipe, ItemStack itemStack);
 
     /**
-     * Gets metadata from an item meta.
+     * 从物品元数据中获取信息。
      * 
      * @param itemMeta
-     *            The item meta
+     *            物品元数据
      * @param list
-     *            The list to populate with metadata
+     *            用于填充元数据的列表
      * @param metadata
-     *            The metadata list to populate
+     *            用于填充的元数据列表
      * @param slot
-     *            The slot
-     * @return true if metadata was extracted, false otherwise
+     *            槽位
+     * @return 获取成功返回 true，否则返回 false
      */
     boolean getItemMeta(ItemMeta itemMeta, List<Map<String, Object>> list, List<List<Map<String, Object>>> metadata, int slot);
 
     /**
-     * Sets metadata on an item stack.
+     * 设置物品堆的元数据。
      * 
      * @param rowType
-     *            The material type
+     *            材质类型
      * @param itemstack
-     *            The item stack
+     *            物品堆
      * @param map
-     *            The metadata map
-     * @return true if metadata was set, false otherwise
+     *            元数据映射
+     * @return 设置成功返回 true，否则返回 false
      */
     boolean setItemMeta(Material rowType, ItemStack itemstack, List<Map<String, Object>> map);
 
     /**
-     * Gets a book from a chiseled bookshelf.
+     * 从雕纹书架获取书本。
      * 
      * @param blockState
-     *            The block state
+     *            方块状态
      * @param event
-     *            The player interact event
-     * @return The book item stack, or null if not applicable
+     *            玩家交互事件
+     * @return 书本物品堆，不适用时返回 null
      */
     ItemStack getChiseledBookshelfBook(BlockState blockState, PlayerInteractEvent event);
 
     /**
-     * Gets arrow metadata for an item stack.
+     * 获取箭矢的元数据。
      * 
      * @param arrow
-     *            The arrow entity
+     *            箭实体
      * @param itemStack
-     *            The item stack
-     * @return The item stack with arrow metadata
+     *            物品堆
+     * @return 带有箭矢元数据的物品堆
      */
     ItemStack getArrowMeta(Arrow arrow, ItemStack itemStack);
 
     // --------------------------------------------------------------------------
-    // Entity methods
+    // 实体相关方法
     // --------------------------------------------------------------------------
 
     /**
-     * Gets metadata from a living entity.
+     * 获取生物实体的元数据。
      * 
      * @param entity
-     *            The living entity
+     *            生物实体
      * @param info
-     *            The list to populate with entity metadata
-     * @return true if metadata was extracted, false otherwise
+     *            用于填充实体元数据的列表
+     * @return 获取成功返回 true，否则返回 false
      */
     boolean getEntityMeta(LivingEntity entity, List<Object> info);
 
     /**
-     * Sets metadata on an entity.
+     * 设置实体的元数据。
      * 
      * @param entity
-     *            The entity
+     *            实体
      * @param value
-     *            The metadata value
+     *            元数据值
      * @param count
-     *            The count
-     * @return true if metadata was set, false otherwise
+     *            数量
+     * @return 设置成功返回 true，否则返回 false
      */
     boolean setEntityMeta(Entity entity, Object value, int count);
 
     /**
-     * Gets the wolf variant and adds it to the info list.
-     * Only implemented in Minecraft 1.21+.
+     * 获取狼的变种信息，并添加到 info 列表。
+     * 仅在 Minecraft 1.21+ 实现。
      * 
      * @param wolf
-     *            The wolf entity
+     *            狼实体
      * @param info
-     *            The list to add the variant information to
+     *            用于添加变种信息的列表
      */
     void getWolfVariant(org.bukkit.entity.Wolf wolf, List<Object> info);
 
     /**
-     * Sets the wolf variant from the provided value.
-     * Only implemented in Minecraft 1.21+.
+     * 设置狼的变种信息。
+     * 仅在 Minecraft 1.21+ 实现。
      * 
      * @param wolf
-     *            The wolf entity
+     *            狼实体
      * @param value
-     *            The variant value to set
+     *            要设置的变种值
      */
     void setWolfVariant(org.bukkit.entity.Wolf wolf, Object value);
 
     /**
-     * Gets the frame type for an entity.
+     * 获取实体的展示框类型。
      * 
      * @param entity
-     *            The entity
-     * @return The frame material type
+     *            实体
+     * @return 展示框材质类型
      */
     Material getFrameType(Entity entity);
 
     /**
-     * Gets the frame type for an entity type.
+     * 获取实体类型对应的展示框材质。
      * 
      * @param type
-     *            The entity type
-     * @return The frame material type
+     *            实体类型
+     * @return 展示框材质类型
      */
     Material getFrameType(EntityType type);
 
     /**
-     * Gets the entity type for a material.
+     * 获取材质对应的实体类型。
      * 
      * @param material
-     *            The material
-     * @return The entity type
+     *            材质
+     * @return 实体类型
      */
     EntityType getEntityType(Material material);
 
     /**
-     * Gets the frame class for a material.
+     * 获取材质对应的展示框类。
      * 
      * @param material
-     *            The material
-     * @return The frame class
+     *            材质
+     * @return 展示框类
      */
     Class<?> getFrameClass(Material material);
 
     // --------------------------------------------------------------------------
-    // Sign methods
+    // 告示牌相关方法
     // --------------------------------------------------------------------------
 
     /**
-     * Checks if a sign is glowing.
+     * 检查告示牌是否为发光告示牌。
      * 
      * @param sign
-     *            The sign
+     *            告示牌
      * @param isFront
-     *            Whether to check the front side
-     * @return true if the sign is glowing, false otherwise
+     *            是否检查正面
+     * @return 发光返回 true，否则返回 false
      */
     boolean isGlowing(Sign sign, boolean isFront);
 
     /**
-     * Checks if a sign is waxed.
+     * 检查告示牌是否为打蜡告示牌。
      * 
      * @param sign
-     *            The sign
-     * @return true if the sign is waxed, false otherwise
+     *            告示牌
+     * @return 打蜡返回 true，否则返回 false
      */
     boolean isWaxed(Sign sign);
 
     /**
-     * Sets whether a sign is glowing.
+     * 设置告示牌是否为发光告示牌。
      * 
      * @param sign
-     *            The sign
+     *            告示牌
      * @param isFront
-     *            Whether to set the front side
+     *            是否设置正面
      * @param isGlowing
-     *            Whether the sign should be glowing
+     *            是否发光
      */
     void setGlowing(Sign sign, boolean isFront, boolean isGlowing);
 
     /**
-     * Sets the color of a sign.
+     * 设置告示牌颜色。
      * 
      * @param sign
-     *            The sign
+     *            告示牌
      * @param isFront
-     *            Whether to set the front side
+     *            是否设置正面颜色
      * @param color
-     *            The color RGB value
+     *            颜色 RGB 值
      */
     void setColor(Sign sign, boolean isFront, int color);
 
     /**
-     * Sets whether a sign is waxed.
+     * 设置告示牌是否为打蜡告示牌。
      * 
      * @param sign
-     *            The sign
+     *            告示牌
      * @param isWaxed
-     *            Whether the sign should be waxed
+     *            是否打蜡
      */
     void setWaxed(Sign sign, boolean isWaxed);
 
     /**
-     * Gets the color of a sign.
+     * 获取告示牌颜色。
      * 
      * @param sign
-     *            The sign
+     *            告示牌
      * @param isFront
-     *            Whether to get the front side color
-     * @return The color RGB value
+     *            是否获取正面颜色
+     * @return 颜色 RGB 值
      */
     int getColor(Sign sign, boolean isFront);
 
     /**
-     * Gets a line of text from a sign.
+     * 获取告示牌某一行的文本。
      * 
      * @param sign
-     *            The sign
+     *            告示牌
      * @param line
-     *            The line number (0-based)
-     * @return The text on the line
+     *            行号（从 0 开始）
+     * @return 该行文本
      */
     String getLine(Sign sign, int line);
 
     /**
-     * Sets a line of text on a sign.
+     * 设置告示牌某一行的文本。
      * 
      * @param sign
-     *            The sign
+     *            告示牌
      * @param line
-     *            The line number (0-based)
+     *            行号（从 0 开始）
      * @param string
-     *            The text to set
+     *            要设置的文本
      */
     void setLine(Sign sign, int line, String string);
 
     /**
-     * Checks if a sign change event is for the front side of the sign.
+     * 检查告示牌变更事件是否为正面。
      * 
      * @param event
-     *            The sign change event
-     * @return true if the event is for the front side, false otherwise
+     *            告示牌变更事件
+     * @return 正面返回 true，否则返回 false
      */
     boolean isSignFront(SignChangeEvent event);
 
     // --------------------------------------------------------------------------
-    // Registry methods
+    // 注册表相关方法
     // --------------------------------------------------------------------------
 
     /**
-     * Gets the registry key for a value.
+     * 获取值的注册表键。
      * 
      * @param value
-     *            The value
-     * @return The registry key
+     *            值
+     * @return 注册表键
      */
     Object getRegistryKey(Object value);
 
     /**
-     * Gets a registry value by key and class.
+     * 通过键和类获取注册表值。
      * 
      * @param key
-     *            The key
+     *            键
      * @param tClass
-     *            The class
-     * @return The registry value
+     *            类
+     * @return 注册表值
      */
     Object getRegistryValue(String key, Object tClass);
 
     /**
-     * Parses a legacy material name.
+     * 解析旧版材质名称。
      * 
      * @param name
-     *            The legacy name
-     * @return The parsed name
+     *            旧版名称
+     * @return 解析后的名称
      */
     String parseLegacyName(String name);
 }

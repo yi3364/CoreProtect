@@ -1,11 +1,11 @@
 # CoreProtect API
 
-The CoreProtect API enables you to log your own block changes, perform lookups, rollbacks, restores, and more. 
+CoreProtect API 允许你记录自定义方块变更、执行查询、回滚、还原等操作。
 
-| API Details |  |
+| API 详情 |  |
 | --- | --- |
-| **API Version:** | 10 |
-| **Plugin Version:** | v22.4+ |
-| **Maven:** | [maven.playpro.com](https://maven.playpro.com) |
+| **API 版本：** | 10 |
+| **插件版本：** | v22.4+ |
+| **Maven：** | [maven.playpro.com](https://maven.playpro.com) |
 
-*Documentation for the API version 10 can be found [here](/api/version/v10/).*
+*API 版本 10 的文档请参见 [这里](/api/version/v10/)。*

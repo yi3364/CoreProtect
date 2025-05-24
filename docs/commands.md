@@ -1,284 +1,284 @@
-# Commands
+# 指令说明
 ---
-You can access the following commands by using `/co`.
+
+你可以通过输入 `/co` 使用以下指令。
 ___
 
-## Command Overview
+## 指令总览
 
-| Command | Description |
+| 指令 | 说明 |
 | --- | --- |
-| [/co help](#co-help) | Display a list of commands |
-| [/co inspect](#co-inspect) | Toggle the inspector |
-| [/co lookup](#co-lookup) | Lookup block data |
-| [/co rollback](#co-rollback) | Rollback block data |
-| [/co restore](#co-restore) | Restore block data |
-| [/co purge](#co-purge) | Delete old block data |
-| [/co reload](#co-reload) | Reload the configuration file |
-| [/co status](#co-status) | View the plugin status |
-| [/co consumer](#co-consumer) | Toggle consumer processing |
+| [/co help](#co-help) | 显示指令列表 |
+| [/co inspect](#co-inspect) | 开关检查器 |
+| [/co lookup](#co-lookup) | 查询方块数据 |
+| [/co rollback](#co-rollback) | 回滚方块数据 |
+| [/co restore](#co-restore) | 还原方块数据 |
+| [/co purge](#co-purge) | 删除旧方块数据 |
+| [/co reload](#co-reload) | 重载配置文件 |
+| [/co status](#co-status) | 查看插件状态 |
+| [/co consumer](#co-consumer) | 切换 consumer 队列处理 |
 
-### Alias Commands
+### 快捷指令
 
-| Command | Description |
+| 指令 | 说明 |
 | --- | --- |
-| /co near | Performs a lookup with a radius of 5 |
-| /co undo | Revert a rollback/restore via the opposite action|
+| /co near | 查询你周围半径5格内的更改 |
+| /co undo | 通过相反操作撤销回滚/还原 |
 
 ---
 
-## Command Details
+## 指令详情
 
-*Detailed command information is listed below.*
+*详细指令信息如下。*
 
 ### /co help
-Display a list of commands in-game.
+在游戏内显示指令列表。
 ___
 
 ### /co inspect
-Enable the inspector. Type the command again to disable it. You can also use just "/co i".
+启用检查器。再次输入该指令可关闭检查器。你也可以直接使用 `/co i`。
 ___
 
 ### /co lookup
-Perform a lookup. Nearly all of the parameters are optional.
+执行查询。几乎所有参数都是可选的。
 
-| Command | Parameters |
+| 指令 | 参数 |
 | --- | --- |
-| /co lookup | `u:<user> t:<time> r:<radius> a:<action> i:<include> e:<exclude>` |
-| /co l | *`/co lookup <params>`* |
+| /co lookup | `u:<用户> t:<时间> r:<半径> a:<操作> i:<包含> e:<排除>` |
+| /co l | *`/co lookup <参数>`* |
 
-#### Parameters
-| Parameter | Description |
+#### 参数说明
+| 参数 | 说明 |
 | --- | --- |
-| [`u:<user>`](#uuser) | Specify the user(s) to lookup. |
-| [`t:<time>`](#ttime) | Specify the amount of time to lookup. |
-| [`r:<radius>`](#rradius) | Specify a radius area to limit the lookup to. |
-| [`a:<action>`](#aaction) | Restrict the lookup to a certain action. |
-| [`i:<include>`](#iinclude) | Include specific blocks/entities in the lookup. |
-| [`e:<exclude>`](#eexclude) | Exclude blocks/entities from the lookup. |
-| [`#<hashtag>`](#hashtag) | Add a hashtag to perform additional actions. |
+| [`u:<user>`](#uuser) | 指定要查询的玩家 |
+| [`t:<time>`](#ttime) | 指定要查询的时间范围 |
+| [`r:<radius>`](#rradius) | 指定查询的半径范围 |
+| [`a:<action>`](#aaction) | 限定查询的操作类型 |
+| [`i:<include>`](#iinclude) | 查询时包含指定方块/实体 |
+| [`e:<exclude>`](#eexclude) | 查询时排除指定方块/实体 |
+| [`#<hashtag>`](#hashtag) | 添加标签以执行附加操作 |
 
-#### Pagination
+#### 分页
 
-If multiple pages are returned, use the command `/co lookup <page>` to switch pages.  
-To change the number of lines displayed on a page, use `/co lookup <page>:<lines>`. 
+如果返回多页结果，可使用 `/co lookup <页码>` 切换页面。  
+要更改每页显示的行数，使用 `/co lookup <页码>:<行数>`。
 
-> *For example, `/co l 1:10` will return 10 lines of data, starting at the first page.*
+> 例如，`/co l 1:10` 会返回第1页的10条数据。
 
 ---
 
 ### /co rollback
-Perform a rollback. Uses the same [parameters](#parameters) as /co lookup.  
-*Rollbacks can be used to revert player actions.*
+执行回滚。参数与 [查询](#参数说明) 相同。  
+*回滚可用于撤销玩家的操作。*
 
-| Command | Parameters |
+| 指令 | 参数 |
 | --- | --- |
-| /co rollback | `u:<user> t:<time> r:<radius> a:<action> i:<include> e:<exclude>` |
-| /co rb | *`/co rollback <params>`* |
+| /co rollback | `u:<用户> t:<时间> r:<半径> a:<操作> i:<包含> e:<排除>` |
+| /co rb | *`/co rollback <参数>`* |
 
 ---
 
 ### /co restore
-Perform a restore. Uses the same [parameters](#parameters) as /co lookup.  
-*Restoring can be used to undo rollbacks or to restore player actions.*
+执行还原。参数与 [查询](#参数说明) 相同。  
+*还原可用于撤销回滚或恢复玩家操作。*
 
-| Command | Parameters |
+| 指令 | 参数 |
 | --- | --- |
-| /co restore | `u:<user> t:<time> r:<radius> a:<action> i:<include> e:<exclude>` |
-| /co rs | *`/co restore <params>`* |
+| /co restore | `u:<用户> t:<时间> r:<半径> a:<操作> i:<包含> e:<排除>` |
+| /co rs | *`/co restore <参数>`* |
 
 ---
 
 ### /co purge
-Purge old block data. Useful for freeing up space on your HDD if you don't need the older data.
+清理旧方块数据。如果你不需要旧数据，可以用来释放硬盘空间。
 
-| Command | Parameters |
+| 指令 | 参数 |
 | --- | --- |
-| /co purge | `t:<time> r:<world> i:<include>` |
+| /co purge | `t:<时间> r:<世界> i:<包含>` |
 
-For example, `/co purge t:30d` will delete all data older than one month, and only keep the last 30 days of data.
+例如，`/co purge t:30d` 会删除所有30天前的数据，仅保留最近30天的数据。
 
-> If used in-game, only data older than 30 days can be purged.  
-> If used from the console, only data older than 24 hours can be purged.
+> 在游戏内使用时，只能清理30天前的数据。  
+> 控制台使用时，只能清理24小时前的数据。
 
-**Purging Worlds**  
-You can optionally specify a world in CoreProtect v19+.  
-For example, `/co purge t:30d r:#world_nether` will delete all data older than one month in the Nether, without removing data in any other worlds.
+**清理指定世界**  
+CoreProtect v19+ 可选指定世界。  
+如 `/co purge t:30d r:#world_nether` 只会删除地狱世界30天前的数据，不影响其他世界。
 
-**Purging Blocks**  
-You can optionally specify block types in CoreProtect v23+.  
-For example, `/co purge t:30d i:stone,dirt` will delete all stone and dirt data older than one month, without removing other block data.
+**清理指定方块**  
+CoreProtect v23+ 可选指定方块类型。  
+如 `/co purge t:30d i:stone,dirt` 只会删除30天前的石头和泥土数据，不影响其他方块。
 
-**MySQL Optimization**  
-In CoreProtect v2.15+, adding "#optimize" to the end of the command (e.g. `/co purge t:30d #optimize`) will also optimize your tables and reclaim disk space.
-This option is only available when using MySQL, as SQLite purges do this by default.
+**MySQL 优化**  
+CoreProtect v2.15+，在指令末尾加 `#optimize`（如 `/co purge t:30d #optimize`）会同时优化表并回收磁盘空间。  
+仅 MySQL 可用，SQLite 默认已自动优化。
 
-*Please note adding the #optimize option will significantly slow down your purge, and is generally unnecessary.*
+*注意：加 #optimize 会显著降低清理速度，通常不需要使用。*
 
 ___
 
 ### /co reload
-Reloads the configuration file.
+重载配置文件。
 ___
 
 ### /co status
-Displays the plugin status and version information.
+显示插件状态和版本信息。
 ___
 
 ### /co consumer
-Console command to pause or resume consumer queue processing.
+控制台命令，用于暂停或恢复 consumer 队列处理。
 ___
 
-
-## Parameter Details
+## 参数详情
 
 ### `u:<user>`
 
-*You can specify a single user or multiple users.* 
+*你可以指定一个或多个玩家。* 
 
-* Example: `u:Notch`
-* Example: `u:Notch,Intelli`
-* Example: `u:#fire,#tnt,#creeper,#explosion`
+* 例子：`u:Notch`
+* 例子：`u:Notch,Intelli`
+* 例子：`u:#fire,#tnt,#creeper,#explosion`
 
 ---
 
 ### `t:<time>`
 
-*You can specify weeks, days, hours, minutes, and seconds.*  
-*Time amounts can be combined, and decimals may be used.*
+*你可以指定周、天、小时、分钟和秒。*  
+*时间单位可组合，也可用小数。*
 
-* Example: `t:2w,5d,7h,2m,10s`
-* Example: `t:5d2h`
-* Example: `t:1h-2h` *(between one to two hours)*
-* Example: `t:2.50h` *(two and a half hours)*
+* 例子：`t:2w,5d,7h,2m,10s`
+* 例子：`t:5d2h`
+* 例子：`t:1h-2h` *(1到2小时之间)*
+* 例子：`t:2.50h` *(两个半小时)*
 
 ---
 
 ### `r:<radius>`
 
-*A numeric radius targets within that many blocks of your player location.*
+*数字半径，表示以你当前位置为中心的方块范围。*
 
-* Example: `r:10` *(target within 10 blocks of your location)*
-* Example: `r:#world_the_end` *(target a specific world)*
-* Example: `r:#global` *(target the entire server)*
-* Example: `r:#worldedit` or `r:#we` *(target a WorldEdit selection)*
+* 例子：`r:10` *(以你为中心，半径10格内)*
+* 例子：`r:#world_the_end` *(指定世界)*
+* 例子：`r:#global` *(全服范围)*
+* 例子：`r:#worldedit` 或 `r:#we` *(WorldEdit 选区)*
 
 ---
 
 ### `a:<action>`
 
-*Restrict the command to a specific action*
+*限制命令只针对特定操作*
 
-* Example: `a:+block` *(only include placed blocks)*
+* 例子：`a:+block` *(只包含放置的方块)*
 
-#### Actions
-| Action | Description |
+#### 操作类型
+| 操作 | 说明 |
 | --- | --- |
-| `a:block` | blocks placed/broken |
-| `a:+block` | blocks placed |
-| `a:-block` | blocks broken |
-| `a:chat` | messages sent in chat |
-| `a:click` | player interactions |
-| `a:command` | commands used |
-| `a:container` | items taken from or put in chests |
-| `a:+container` | items put in chests |
-| `a:-container` | items taken from chests |
-| `a:inventory` | items added or removed from player inventories |
-| `a:+inventory` | items added to player inventories |
-| `a:-inventory` | items removed from player inventories |
-| `a:item` | items dropped, thrown, picked up, deposited, or withdrawn by players |
-| `a:+item` | items picked up or withdrawn by players |
-| `a:-item` | items dropped, thrown, or deposited by players |
-| `a:kill` | mobs/animals killed |
-| `a:session` | player logins/logouts |
-| `a:+session` | player logins |
-| `a:-session` | player logouts |
-| `a:sign` | messages written on signs |
-| `a:username` | username changes |
+| `a:block` | 方块放置/破坏 |
+| `a:+block` | 方块放置 |
+| `a:-block` | 方块破坏 |
+| `a:chat` | 聊天消息 |
+| `a:click` | 玩家交互 |
+| `a:command` | 使用的指令 |
+| `a:container` | 物品放入或取出箱子 |
+| `a:+container` | 物品放入箱子 |
+| `a:-container` | 物品取出箱子 |
+| `a:inventory` | 玩家背包物品增减 |
+| `a:+inventory` | 玩家背包物品增加 |
+| `a:-inventory` | 玩家背包物品减少 |
+| `a:item` | 玩家丢弃、投掷、拾取、存取、取出物品 |
+| `a:+item` | 玩家拾取或取出物品 |
+| `a:-item` | 玩家丢弃、投掷或存入物品 |
+| `a:kill` | 实体/动物被击杀 |
+| `a:session` | 玩家登录/退出 |
+| `a:+session` | 玩家登录 |
+| `a:-session` | 玩家退出 |
+| `a:sign` | 告示牌内容书写 |
+| `a:username` | 用户名更改 |
 
 ---
 
 ### `i:<include>`
 
-*Can be used to specify a block/item/entity.* 
+*用于指定要包含的方块/物品/实体。* 
 
-* Example: `i:stone` *(only include stone)*
-* Example: `i:stone,oak_wood,bedrock` *(specify multiple blocks)*
+* 例子：`i:stone` *(只包含石头)*
+* 例子：`i:stone,oak_wood,bedrock` *(指定多个方块)*
 
-> You can find a list of block names at [https://coreprotect.net/wiki-blocks](https://coreprotect.net/wiki-blocks).  
-> You can find a list of entity names at [https://coreprotect.net/wiki-entities](https://coreprotect.net/wiki-entities).
+> 方块名称列表见 [https://coreprotect.net/wiki-blocks](https://coreprotect.net/wiki-blocks)。  
+> 实体名称列表见 [https://coreprotect.net/wiki-entities](https://coreprotect.net/wiki-entities)。
 
 ---
 
 ### `e:<exclude>`
 
-*Can be used to exclude a block/item/entity/user.*
+*用于排除某个方块/物品/实体/玩家。*
 
-* Example: `e:tnt` *(exclude TNT)*
+* 例子：`e:tnt` *(排除TNT)*
 
 ---
 
 ### `#<hashtag>`
 
-Add a hashtag to the end of your command to perform additional actions.
+在指令末尾添加标签以执行附加操作。
 
-* Example: `#preview` *(perform a rollback preview)*
+* 例子：`#preview` *(执行回滚预览)*
 
-#### Hashtags
-| Hashtag | Effect |
+#### 标签列表
+| 标签 | 作用 |
 | --- | --- |
-| `#preview` | Preview a rollback/restore |
-| `#count` | Return the number of rows found in a lookup query |
-| `#verbose` | Display additional information during a rollback/restore |
-| `#silent` | Display minimal information during a rollback/restore |
+| `#preview` | 预览回滚/还原 |
+| `#count` | 返回查询结果的行数 |
+| `#verbose` | 回滚/还原时显示详细信息 |
+| `#silent` | 回滚/还原时仅显示最简信息 |
 
 ___
 
-## Example Commands
+## 示例命令
 
-### Example Rollback Commands
+### 回滚命令示例
 
-By default, if no radius is specified, a radius of 10 will be applied, restricting the rollback to within 10 blocks of you. Use `r:#global` to do a global rollback.
+默认情况下，如果未指定半径，则会应用半径为10，仅回滚你周围10格内的操作。使用 `r:#global` 可进行全服回滚。
 
 * `/co rollback Notch t:1h`  
-  *(rollback Notch 1 hour (with default radius of 10))*
+  *(回滚 Notch 最近1小时内的操作（默认半径10格）)*
 * `/co rollback u:Notch,Intelli t:1h #preview`  
-  *(PREVIEW rolling back both Notch & Intelli 1 hour (with default radius of 10))*
+  *(预览回滚 Notch 和 Intelli 最近1小时内的操作（默认半径10格）)*
 * `/co rollback u:Notch t:23h17m`  
-  *(rollback Notch 23 hours and 17 minutes (with default radius of 10))*
+  *(回滚 Notch 最近23小时17分钟内的操作（默认半径10格）)*
 * `/co rollback u:Notch t:1h i:stone`  
-  *(rollback ONLY stone placed/broken by Notch within the last hour (with default radius of 10))*
+  *(仅回滚 Notch 最近1小时内放置/破坏的石头（默认半径10格）)*
 * `/co rollback u:Notch t:1h i:stone a:-block`  
-  *(rollback ONLY stone BROKEN by Notch within the last hour (with default radius of 10))*
+  *(仅回滚 Notch 最近1小时内破坏的石头（默认半径10格）)*
 * `/co rollback u:Notch t:1h r:#global e:stone,dirt`  
-  *(rollback EVERYTHING Notch did in the last hour EXCEPT for stone and dirt placed/broken)*
+  *(回滚 Notch 最近1小时内除石头和泥土外的所有操作)*
 * `/co rollback u:Notch t:1h r:20`  
-  *(rollback griefing Notch did in the last hour that is within 20 blocks of you)*
+  *(回滚 Notch 最近1小时内距离你20格范围内的破坏)*
 * `/co rollback u:Notch t:1h r:#nether`  
-  *(rollback griefing Notch did in the last hour ONLY in the Nether)*
+  *(仅回滚 Notch 最近1小时在地狱世界的破坏)*
 * `/co rollback u:Notch t:5m a:inventory`  
-  *(rollback inventory transactions by Notch in the last 5 minutes)*
+  *(回滚 Notch 最近5分钟内的背包操作)*
 * `/co rollback t:15m r:30`  
-  *(rollback everything done in the last 15 minutes by anyone within 30 blocks of you)*
+  *(回滚任意人在你周围30格内最近15分钟内的所有操作)*
 * `/co rollback t:15m r:#worldedit`  
-  *(rollback everything done in the last 15 minutes in a WorldEdit selection)*
+  *(回滚 WorldEdit 选区内最近15分钟内的所有操作)*
 
 ---
 
-### Example Lookup Commands
+### 查询命令示例
 
-Lookup commands are generally the same as rollback commands. The primary difference is that a default radius is not applied to lookups, meaning all lookup commands do a global search by default.
+查询命令与回滚命令基本相同。主要区别在于查询默认不限制半径，即所有查询默认全局搜索。
 
 * `/co lookup i:diamond_ore t:1h a:-block`  
-  *(lookup all diamond ore mined in the last hour)*
+  *(查询最近1小时内被挖掘的所有钻石矿石)*
 * `/co lookup u:Notch t:30m a:chat`  
-  *(lookup chat messages sent by Notch in the last 30 minutes)*
+  *(查询 Notch 最近30分钟内发送的聊天消息)*
 * `/co lookup u:Notch t:3d a:inventory`  
-  *(lookup inventory transactions by Notch in the last 3 days)*
+  *(查询 Notch 最近3天内的背包操作)*
 * `/co lookup u:Notch a:login`  
-  *(lookup all logins ever done by Notch)*
+  *(查询 Notch 的所有登录记录)*
 * `/co lookup u:Notch a:login`  
-  *(lookup all logins ever done by Notch)*
+  *(查询 Notch 的所有登录记录)*
 * `/co lookup u:Notch a:username`  
-  *(lookup previous usernames used by Notch)*
+  *(查询 Notch 曾用过的用户名)*
 
 ___

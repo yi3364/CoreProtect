@@ -1,49 +1,48 @@
-# Tools & Integrations
+# 工具与集成
 
-Listed below are links to plugins and tools compatible with CoreProtect.
+以下是与 CoreProtect 兼容的插件和工具链接。
 
-These plugins/tools are maintained by third parties, and may have issues outside of our control.
+这些插件/工具由第三方维护，可能会出现我们无法控制的问题。
 
 ---
 
-## Plugins
+## 插件
 
 * **WorldEdit**  
-Use WorldEdit selections as a radius, and log your WorldEdit changes.
+可将 WorldEdit 选区作为半径，并记录你的 WorldEdit 更改。  
 [https://dev.bukkit.org/projects/worldedit](https://dev.bukkit.org/projects/worldedit)  
 &nbsp;
 
 * **CoreProtect-Anti-Xray**  
-Displays how many ores a player has destroyed in a specific time span.
+显示玩家在特定时间段内挖掘的矿石数量。  
 [https://dev.bukkit.org/bukkit-plugins/coreprotect-anti-xray/](https://dev.bukkit.org/bukkit-plugins/coreprotect-anti-xray/)  
 &nbsp;
 
 * **CoreProtect TNT**  
-The CoreProtect TNT extension adds logging for TNT and creeper explosion sources.
+CoreProtect TNT 扩展为 TNT 和苦力怕爆炸源添加日志记录。  
 [https://www.spigotmc.org/resources/coreprotect-tnt-log-tnt-creeper-explode-source.69609/](https://www.spigotmc.org/resources/coreprotect-tnt-log-tnt-creeper-explode-source.69609/)  
 &nbsp;
 
 * **CoreProtect Time-Lapse**  
-CPTL is an add-on tool for CoreProtect used to create a time-lapse from historical data.
+CPTL 是 CoreProtect 的一个附加工具，可根据历史数据生成时间推移动画。  
 [https://modrinth.com/plugin/cptl](https://modrinth.com/plugin/cptl)  
 &nbsp;
 
-## Tools
+## 工具
 
 * **CoreProtect Lookup Web Interface**  
-Search through your CoreProtect history with an easy-to-use interface.  
+通过易用的网页界面搜索你的 CoreProtect 历史记录。  
 [https://www.spigotmc.org/resources/coreprotect-lookup-web-interface.28033/](https://www.spigotmc.org/resources/coreprotect-lookup-web-interface.28033/)  
 &nbsp;
 
 * **Watson**  
-Watson is a client side Minecraft mod that displays CoreProtect logs in 3D.  
+Watson 是一个客户端 Minecraft 模组，可在 3D 中显示 CoreProtect 日志。  
 [https://github.com/vacla/Watson](https://github.com/vacla/Watson)  
 &nbsp;
 
-
 ---
 
-Have you created a plugin that's compatible with CoreProtect?  
-Let us know to have it added to this list!
+你开发了与 CoreProtect 兼容的插件吗？  
+欢迎联系我们，将你的插件添加到此列表！
 
 ---

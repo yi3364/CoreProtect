@@ -1,30 +1,30 @@
-# Configuration
+# 配置说明
 
-The CoreProtect configuration file can be found within the CoreProtect folder, at `config.yml`.
+CoreProtect 的配置文件位于 CoreProtect 文件夹下的 `config.yml`。
 
-## Per-World Configuration
+## 单世界配置
 
-If you'd like to modify the logging settings for a specific world, simply do the following:
+如果你想为某个特定世界修改日志记录设置，请按以下步骤操作：
 
-1. Copy the config.yml file to the name of the world (e.g. world_nether.yml)
-2. In the new file, modify the logging settings as desired.
-3. Either restart your server, or type "/co reload" in-game.
+1. 将 config.yml 文件复制并重命名为该世界的名称（例如 world_nether.yml）
+2. 在新文件中，根据需要修改日志记录设置。
+3. 重启服务器，或在游戏内输入 "/co reload"。
 
-Secondary configuration files override the value specified in config.yml. If you leave an option out of a secondary configuration file, then the option specified in config.yml will be used.
+二级配置文件会覆盖 config.yml 中的对应设置。如果你在二级配置文件中省略某个选项，则会使用 config.yml 中的设置。
 
-#### Examples
-* If you'd like to disable all logging for the End, copy the `config.yml` file to `world_the_end.yml` (matching the folder name for the world). Then, simply disable all logging options within the new file.
-* If you just want to disable entity death logging in the Nether, but keep all other logging options the same, simply create a file named `world_nether.yml` containing the text "rollback-entities: false".
+#### 示例
+* 如果你想禁用末地（The End）的所有日志记录，将 `config.yml` 复制为 `world_the_end.yml`（需与世界文件夹名一致），然后在新文件中禁用所有日志选项即可。
+* 如果你只想禁用地狱（Nether）中的实体死亡日志，但保留其他日志设置，只需新建一个名为 `world_nether.yml` 的文件，内容为 "rollback-entities: false"。
 
-## Disabling Logging
+## 禁用日志记录
 
-To disable logging for specific users, blocks or commands, simply do the following:
+如需为特定用户、方块或指令禁用日志记录，请按以下步骤操作：
 
-1. In the CoreProtect plugin directory, create a file named `blacklist.txt`.
-2. Enter the names of the users (or commands) you'd like to disable logging for (each username on a new line).
-3. Either restart your server, or type "/co reload" in-game.
+1. 在 CoreProtect 插件目录下创建一个名为 `blacklist.txt` 的文件。
+2. 在文件中输入你想禁用日志记录的用户名（或指令），每行一个。
+3. 重启服务器，或在游戏内输入 "/co reload"。
 
-This can be used to disable logging for non-player users, such as "#creeper". For example, if you'd like to disable logging for the user "Notch", TNT explosions, stone blocks, and the "/help" command, the blacklist.txt file would look like this:
+此方法可用于禁用非玩家用户（如 "#creeper"）的日志记录。例如，如果你想禁用用户 "Notch"、TNT 爆炸、石头方块和 "/help" 指令的日志记录，blacklist.txt 文件内容如下：
 ```text
 Notch
 #tnt
@@ -32,4 +32,4 @@ Notch
 minecraft:stone
 ```
 
-*Please note that to disable logging for blocks, CoreProtect v23+ is required, and you must include the namespace. For example, to disable logging for dirt, you must add it as "minecraft:dirt".*
+*请注意，禁用方块日志记录需要 CoreProtect v23+，并且必须包含命名空间。例如，禁用泥土方块日志时，需写为 "minecraft:dirt"。*

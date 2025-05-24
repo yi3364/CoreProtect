@@ -20,26 +20,26 @@ import net.coreprotect.utility.StringUtils;
 import net.coreprotect.utility.WorldUtils;
 
 /**
- * Provides API methods for looking up block-related actions in the processing queue.
- * This class allows for retrieving actions that have not yet been saved to the database.
+ * 提供用于查询处理队列中方块相关操作的 API 方法。
+ * 本类允许检索尚未保存到数据库的操作。
  */
 public class QueueLookup extends Queue {
 
     /**
-     * Private constructor to prevent instantiation.
-     * This is a utility class with static methods only.
+     * 私有构造方法，防止实例化。
+     * 该工具类仅包含静态方法。
      */
     private QueueLookup() {
-        throw new IllegalStateException("API class");
+        throw new IllegalStateException("API 类");
     }
 
     /**
-     * Performs a lookup of block-related actions in the processing queue for the specified block.
-     * This allows retrieving actions that have not yet been committed to the database.
+     * 查询指定方块在处理队列中的相关操作。
+     * 可用于获取尚未提交到数据库的操作。
      * 
      * @param block
-     *            The block to look up in the processing queue
-     * @return List of results in a String array format, empty list if API is disabled or no results found
+     *            要在处理队列中查询的方块
+     * @return 以 String 数组格式返回的结果列表，如 API 被禁用或无结果则返回空列表
      */
     public static List<String[]> performLookup(Block block) {
         List<String[]> result = new ArrayList<>();
@@ -53,30 +53,30 @@ public class QueueLookup extends Queue {
         }
 
         try {
-            // Determine total count of actions in the consumer queues
+            // 计算 consumer 队列中的操作总数
             int consumerCount = calculateConsumerCount();
 
             if (consumerCount == 0) {
                 return result;
             }
 
-            // Get data from the current consumer
+            // 获取当前 consumer 的数据
             int currentConsumer = Consumer.currentConsumer;
             ArrayList<Object[]> consumerData = Consumer.consumer.get(currentConsumer);
             Map<Integer, String[]> users = Consumer.consumerUsers.get(currentConsumer);
             Map<Integer, Object> consumerObject = Consumer.consumerObjects.get(currentConsumer);
 
-            // Current block location for comparison with actions in the queue
+            // 当前方块位置，用于与队列中的操作进行比较
             Location blockLocation = block.getLocation();
 
-            // Check for block actions in the processing queue
+            // 检查处理队列中的方块操作
             ListIterator<Object[]> iterator = consumerData.listIterator();
             while (iterator.hasNext()) {
                 Object[] data = iterator.next();
                 int id = (int) data[0];
                 int action = (int) data[1];
 
-                // Only process block break and place actions
+                // 仅处理方块破坏和放置操作
                 if (action != Process.BLOCK_BREAK && action != Process.BLOCK_PLACE) {
                     continue;
                 }
@@ -84,7 +84,7 @@ public class QueueLookup extends Queue {
                 String[] userData = users.get(id);
                 Object objectData = consumerObject.get(id);
 
-                // Verify the action pertains to the requested block
+                // 校验该操作是否与请求的方块有关
                 if (isActionForBlock(userData, objectData, blockLocation)) {
                     Material blockType = (Material) data[2];
                     int legacyData = (int) data[3];
@@ -102,7 +102,7 @@ public class QueueLookup extends Queue {
                 }
             }
 
-            // Reverse the result list to match database lookup order (most recent first)
+            // 反转结果列表，使其与数据库查询顺序一致（最新在前）
             Collections.reverse(result);
         }
         catch (Exception e) {
@@ -113,9 +113,9 @@ public class QueueLookup extends Queue {
     }
 
     /**
-     * Calculates the total count of actions in the consumer queues.
+     * 计算 consumer 队列中的操作总数。
      * 
-     * @return The total count of actions in the consumer queues
+     * @return consumer 队列中的操作总数
      */
     private static int calculateConsumerCount() {
         int currentConsumerSize = Process.getCurrentConsumerSize();
@@ -129,15 +129,15 @@ public class QueueLookup extends Queue {
     }
 
     /**
-     * Determines if an action in the queue pertains to the specified block location.
+     * 判断队列中的操作是否与指定方块位置相关。
      * 
      * @param userData
-     *            User data associated with the action
+     *            操作关联的用户数据
      * @param objectData
-     *            Object data associated with the action
+     *            操作关联的对象数据
      * @param blockLocation
-     *            Location of the block being looked up
-     * @return true if the action pertains to the specified block, false otherwise
+     *            被查询方块的位置
+     * @return 若操作与指定方块相关则返回 true，否则返回 false
      */
     private static boolean isActionForBlock(String[] userData, Object objectData, Location blockLocation) {
         return userData != null && objectData != null && (objectData instanceof BlockState) && ((BlockState) objectData).getLocation().equals(blockLocation);

@@ -1,96 +1,96 @@
-# Permissions
+# 权限列表
 
-The following permissions can be used to restrict functionality within the plugin.
+以下权限可用于限制插件内的功能。
 
 ---
 
-## Base Permissions
+## 基础权限
 
-* **coreprotect.\*** *(default: op)*  
-  Allows access to all of the CoreProtect commands.  
+* **coreprotect.\*** *(默认: op)*  
+  允许访问所有 CoreProtect 指令。  
   &nbsp;
-* **coreprotect.inspect** *(default: op)*  
-  Allows access to the CoreProtect inspect command.  
+* **coreprotect.inspect** *(默认: op)*  
+  允许使用 CoreProtect 检查器指令。  
   &nbsp;
-* **coreprotect.lookup** *(default: op)*  
-  Allows access to the CoreProtect lookup command.  
+* **coreprotect.lookup** *(默认: op)*  
+  允许使用 CoreProtect 查询指令。  
   &nbsp;
-* **coreprotect.rollback** *(default: op)*  
-  Allows access to the CoreProtect rollback command.  
+* **coreprotect.rollback** *(默认: op)*  
+  允许使用 CoreProtect 回滚指令。  
   &nbsp;
-* **coreprotect.restore** *(default: op)*  
-  Allows access to the CoreProtect restore command.  
+* **coreprotect.restore** *(默认: op)*  
+  允许使用 CoreProtect 还原指令。  
   &nbsp;
-* **coreprotect.teleport** *(default: op)*  
-  Allows access to the CoreProtect teleport command.  
+* **coreprotect.teleport** *(默认: op)*  
+  允许使用 CoreProtect 传送指令。  
   &nbsp;
-* **coreprotect.help** *(default: op)*  
-  Allows access to the CoreProtect help command.  
+* **coreprotect.help** *(默认: op)*  
+  允许使用 CoreProtect 帮助指令。  
   &nbsp;
-* **coreprotect.purge** *(default: op)*  
-  Allows access to the CoreProtect purge command.  
+* **coreprotect.purge** *(默认: op)*  
+  允许使用 CoreProtect 清理指令。  
   &nbsp;
-* **coreprotect.reload** *(default: op)*  
-  Allows access to the CoreProtect reload command.  
+* **coreprotect.reload** *(默认: op)*  
+  允许使用 CoreProtect 重载指令。  
   &nbsp;
-* **coreprotect.status** *(default: op)*  
-  Allows access to the CoreProtect status command.  
+* **coreprotect.status** *(默认: op)*  
+  允许使用 CoreProtect 状态指令。  
   &nbsp;
-* **coreprotect.consumer** *(default: op)*  
-  Allows access to the CoreProtect consumer command.  
+* **coreprotect.consumer** *(默认: op)*  
+  允许使用 CoreProtect consumer 指令。  
   &nbsp;
-* **coreprotect.networking** *(default: op)*  
-  Allows access to the CoreProtect networking API.  
+* **coreprotect.networking** *(默认: op)*  
+  允许使用 CoreProtect 网络 API。  
   
 ---
 
-## Child Permissions
+## 子权限
 
-* **coreprotect.lookup.block** *(default: op)*  
-  Can be optionally used as a negative permission to prevent block lookups.  
+* **coreprotect.lookup.block** *(默认: op)*  
+  可作为负权限使用以阻止方块查询。  
   &nbsp;
-* **coreprotect.lookup.chat** *(default: op)*  
-  Can be optionally used as a negative permission to prevent chat lookups.  
+* **coreprotect.lookup.chat** *(默认: op)*  
+  可作为负权限使用以阻止聊天查询。  
   &nbsp;
-* **coreprotect.lookup.click** *(default: op)*  
-  Can be optionally used as a negative permission to prevent interaction lookups.  
+* **coreprotect.lookup.click** *(默认: op)*  
+  可作为负权限使用以阻止交互查询。  
   &nbsp;
-* **coreprotect.lookup.command** *(default: op)*  
-  Can be optionally used as a negative permission to prevent command lookups.  
+* **coreprotect.lookup.command** *(默认: op)*  
+  可作为负权限使用以阻止指令查询。  
   &nbsp;
-* **coreprotect.lookup.container** *(default: op)*  
-  Can be optionally used as a negative permission to prevent container lookups.  
+* **coreprotect.lookup.container** *(默认: op)*  
+  可作为负权限使用以阻止容器查询。  
   &nbsp;
-* **coreprotect.lookup.inventory** *(default: op)*  
-  Can be optionally used as a negative permission to prevent inventory lookups.  
+* **coreprotect.lookup.inventory** *(默认: op)*  
+  可作为负权限使用以阻止背包查询。  
   &nbsp;
-* **coreprotect.lookup.item** *(default: op)*  
-  Can be optionally used as a negative permission to prevent item lookups.  
+* **coreprotect.lookup.item** *(默认: op)*  
+  可作为负权限使用以阻止物品查询。  
   &nbsp;
-* **coreprotect.lookup.kill** *(default: op)*  
-  Can be optionally used as a negative permission to prevent entity kill lookups.  
+* **coreprotect.lookup.kill** *(默认: op)*  
+  可作为负权限使用以阻止实体击杀查询。  
   &nbsp;
-* **coreprotect.lookup.near** *(default: op)*  
-  Can be optionally used as a negative permission to prevent lookups via the near command.  
+* **coreprotect.lookup.near** *(默认: op)*  
+  可作为负权限使用以阻止 near 指令查询。  
   &nbsp;
-* **coreprotect.lookup.session** *(default: op)*  
-  Can be optionally used as a negative permission to prevent session lookups.  
+* **coreprotect.lookup.session** *(默认: op)*  
+  可作为负权限使用以阻止会话查询。  
   &nbsp;
-* **coreprotect.lookup.sign** *(default: op)*  
-  Can be optionally used as a negative permission to prevent sign lookups.  
+* **coreprotect.lookup.sign** *(默认: op)*  
+  可作为负权限使用以阻止告示牌查询。  
   &nbsp;
-* **coreprotect.lookup.username** *(default: op)*  
-  Can be optionally used as a negative permission to prevent username change lookups.  
+* **coreprotect.lookup.username** *(默认: op)*  
+  可作为负权限使用以阻止用户名更改查询。  
 
 ---
 
-## Command Handler
+## 指令权限
 
-* **coreprotect.co** *(default: true)*  
-  Allows access to the CoreProtect "/co" command.  
+* **coreprotect.co** *(默认: true)*  
+  允许使用 CoreProtect 的 "/co" 指令。  
   &nbsp;
-* **coreprotect.core** *(default: false)*  
-  Allows access to the CoreProtect "/core" command.  
+* **coreprotect.core** *(默认: false)*  
+  允许使用 CoreProtect 的 "/core" 指令。  
   &nbsp;
-* **coreprotect.coreprotect** *(default: false)*  
-  Allows access to the CoreProtect "/coreprotect" command.  
+* **coreprotect.coreprotect** *(默认: false)*  
+  允许使用 CoreProtect 的 "/coreprotect" 指令。

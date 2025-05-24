@@ -35,7 +35,7 @@ public class ConfigFile extends Config {
 
     private static final TreeMap<String, String> DEFAULT_VALUES = new TreeMap<>();
     private static final TreeMap<String, String> USER_VALUES = new TreeMap<>();
-    private static final String DEFAULT_FILE_HEADER = "# CoreProtect Language File (en)";
+    private static final String DEFAULT_FILE_HEADER = "# CoreProtect 语言文件（简体中文）";
     private final HashMap<String, String> lang;
 
     public static void init(String fileName) throws IOException {
@@ -165,6 +165,9 @@ public class ConfigFile extends Config {
                     continue;
                 }
 
+                out.append(Config.LINE_SEPARATOR);
+                out.append("# 默认值: ");
+                out.append(defaultValue);
                 out.append(Config.LINE_SEPARATOR);
                 out.append(key);
                 out.append(": ");
